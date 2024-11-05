@@ -17,7 +17,7 @@ function smallest(n: number): any {
   function smallestElemIndex(arr: number[]) {
     return arr.findIndex((num: number) => num == smallestElem(n));
   }
-  //CURRENT МАССИВ ИЗ ИСХОДНОГО ЧСИЛА
+  //VALUE МАССИВ ИЗ ИСХОДНОГО ЧСИЛА
   let array = numberToArr(n);
 
   function standartSmall(number: number) {
@@ -28,24 +28,51 @@ function smallest(n: number): any {
     return [tempNumber, smallestElemIndex(array), 0];
   }
 
+  function smallestElemIndexLeft(array: number[]) {
+    let index = 0;
+    while (index < array.length) {
+      if (array[index] > smallestElem(n)) {
+        console.log(index)
+        index++
+  
+      } 
+      index++
+    } 
+  }
+
+  return smallestElemIndexLeft(array);
+
   // [x] CC: 0 ВТОРОЙ
-  if (array[1] == 0) {
-    let tempElem = array[0];
-    array.splice(0, 1, tempElem);
-    array[1] = tempElem;
-    array.shift();
-    return [arrToNumber(array), 0, 1];
-  } // [x] CC: минимальное число не первое, 0 не второй
-  else if (smallestElemIndex(array) != 0 && array[1] != 0) {
-    return standartSmall(n);
-  } // [x]   
+  // if (array[1] == 0) {
+  //   let tempElem = array[0];
+  //   array.splice(0, 1, tempElem);
+  //   array[1] = tempElem;
+  //   array.shift();
+  //   return [arrToNumber(array), 0, 1];
+  // } // [x] CC: минимальное число не первое, 0 не второй
+  // else if (smallestElemIndex(array) != 0 && array[1] != 0) {
+  //   return standartSmall(n);
+  // } // [x] ЕСЛИ ПЕРВОЕ ЧИСЛО МИНИМАЛЬНОЕ, ТО ИЩЕМ ИНДЕКС СЛЕДУЮЩЕГО МИНИМАЛЬНОГО
+  // else {
+  //   let index = 0;
+  //   while (index < array.length) {
+  //     let tempArr = array.shift();
+  //     if (smallestElemIndex(array) == 0) {
+  //     }
 
-
+  //     index++;
+  //   }
+  //   return [];
+  // } else
+  // if (smallestElemIndex(array) == 0) {
+  //   return standartSmall(n);
+  // }
 }
 
-console.log(smallest(261235));
-console.log(smallest(209917));
-console.log(smallest(109917));
-console.log(smallest(409917));
-console.log(smallest(2853615));
-console.log(smallest(115305));
+console.log(smallest(296837));
+console.log(smallest());
+// console.log(smallest(209917));
+// console.log(smallest(109917));
+// console.log(smallest(409917));
+// console.log(smallest(2853615));
+// console.log(smallest(115305));
