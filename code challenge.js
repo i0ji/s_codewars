@@ -9,12 +9,12 @@ If no occurrences can be found, a count of 0 should be returned.
 ("", "z")       ==>  0*/
 
 function strCount(str, letter) {
-    count = 0
-    for (i=0; i<str.length; i++) {
-        if (str[i] == letter) {
-        count++
-        }
-     }
-     return count
+  count = 0;
+  for (i = 0; i < str.length; i++) {
+    if (str[i] == letter) {
+      count++;
+    }
   }
-console.log(strCount('', 'z'))
+  return count;
+}
+console.log(strCount('', 'z'));
