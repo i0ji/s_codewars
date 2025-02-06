@@ -6,15 +6,15 @@
 //                  ┌────────┐
 //                  │-6------│
 //                  └────────┘
-// ┌────────┐       
-// │------5-│        
+// ┌────────┐
+// │------5-│
 // └────────┘  ┌─────► OK!
 //             │    ┌────────┐
 //             │    │-4------│
 //             │    └────────┘
 // ┌────────┐  │
-// │------3-│  │     
-// BANG!────┘  ├─────► OK! 
+// │------3-│  │
+// BANG!────┘  ├─────► OK!
 //   ▲  |\_/|  │    ┌────────┐
 //   │ ("^-^)  │    │-2------│
 //   │ )   (   │    └────────┘
@@ -32,18 +32,17 @@
 // Start 1, finish 5, then answer is 2 (1 => 4 => 5 or 1 => 2 => 5)
 
 function solution(start, finish) {
-
-  if (start===finish) {
-    return 0 
+  if (start === finish) {
+    return 0;
+  } else {
+    if (finish - start < 2) {
+      return 1;
     } else {
-  if (finish-start<2) {
-     return 1
-     } else {
-  if ((finish-start)%3===0) {
-    return (((finish-start)/3))
-     } else {
-      return (Math.round((finish-start)/3)+1)
-     }
+      if ((finish - start) % 3 === 0) {
+        return (finish - start) / 3;
+      } else {
+        return Math.round((finish - start) / 3) + 1;
+      }
     }
   }
 }

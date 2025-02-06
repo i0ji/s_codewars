@@ -8,7 +8,12 @@
 //     return (dir === 'R') ? arr.sort(sortFunc(a,b) {return a-b}) : arr.sort(sortFunc(a,b {return b-a})
 // }
 
-
 export function flip(dir: string, arr: number[]): number[] {
-    return (dir === 'R') ? arr.sort(function(a,b) { return a - b }) : arr.sort(function(a,b) { return b -a })
+  return dir === 'R'
+    ? arr.sort(function (a, b) {
+        return a - b;
+      })
+    : arr.sort(function (a, b) {
+        return b - a;
+      });
 }

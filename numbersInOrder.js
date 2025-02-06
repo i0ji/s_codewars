@@ -1,9 +1,11 @@
 function inAscOrder(arr) {
-	return JSON.stringify(arr)===JSON.stringify(arr.sort((a, b) => a - b))
+  return (
+    JSON.stringify(arr) ===
+    JSON.stringify(arr.sort((a, b) => a - b))
+  );
 }
-console.log(inAscOrder([1,6,10,18,2,4,20]))
-console.log(inAscOrder([1,4,10,28,2,4,20]))
-
+console.log(inAscOrder([1, 6, 10, 18, 2, 4, 20]));
+console.log(inAscOrder([1, 4, 10, 28, 2, 4, 20]));
 
 // function inAscOrder(arr) {
 //     for (i=0; i<arr.length; i++) {

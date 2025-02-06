@@ -21,9 +21,8 @@
 
 //#2
 export function isPowerOfTwo(n: number): boolean {
-  return (Math.log2(n) % 2 === 0 || (Math.log2(n) % 2 === 1))
+  return Math.log2(n) % 2 === 0 || Math.log2(n) % 2 === 1;
 }
-
 
 console.log(isPowerOfTwo(3));
 console.log(isPowerOfTwo(5));
